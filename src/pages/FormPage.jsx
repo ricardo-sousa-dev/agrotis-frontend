@@ -1,29 +1,13 @@
 import React, { useState } from 'react';
 import '../css/pages/FormPage.css';
 import { useForm } from 'react-hook-form';
-import { cnpjMask, dateMask } from '../utils/inputMask';
+import { cnpjMask } from '../utils/inputMask';
+import styled from 'styled-components';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 function FormPage() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
-
-  const onSubmit = data => console.log(
-    {
-      nome: data.nome,
-      dataInicial: new Date(data.dataInicial).toISOString(),
-      dataFinal: new Date(data.dataFinal).toISOString(),
-      infosPropriedade: {
-        id: data.idProperty,
-        nome: data.nomeProperty,
-      },
-      cnpj: data.cnpj,
-      laboratorio: {
-        id: data.idLaboratorio,
-        nome: data.nomeLaboratorio,
-      },
-      observacoes: data.observacoes,
-    }
-  );
-
+  const [ open, setOpen ] = useState(false);
   const [ values, setValues ] = useState({ cnpj: '' })
 
   const inputChange = (e) => {
@@ -34,9 +18,43 @@ function FormPage() {
     })
   }
 
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = (data) => {
+    setOpen(true);
+
+    setTimeout(() => {
+      setOpen(false);
+      console.log(
+        {
+          nome: data.nome,
+          dataInicial: new Date(data.dataInicial).toISOString(),
+          dataFinal: new Date(data.dataFinal).toISOString(),
+          infosPropriedade: {
+            id: data.idPropriedade,
+            nome: data.nomePropriedade,
+          },
+          cnpj: data.cnpj,
+          laboratorio: {
+            id: data.idLaboratorio,
+            nome: data.nomeLaboratorio,
+          },
+          observacoes: data.observacoes,
+        }
+      );
+    }, 3000);
+
+  }
+
+  const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
   return (
     <>
-      <h1>Cadastro</h1>
+      <Title>Cadastro</Title>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="nome">
           <label>Nome</label>
@@ -50,8 +68,7 @@ function FormPage() {
           <label>Data Inicial</label>
           <input {...register("dataInicial", { required: true })}
             data-cy="input-dataInicial"
-            type="text"
-            placeholder="dd/mm/aaaa"
+            type="date"
             name='dataInicial' />
           {errors.dataInicial?.type === 'required' && "Preenchimento da Data Inicial é obrigatório"}
         </div>
@@ -60,8 +77,7 @@ function FormPage() {
           <label>Data Final</label>
           <input {...register("dataFinal", { required: true })}
             data-cy="input-dataFinal"
-            type="text"
-            placeholder="dd/mm/aaaa"
+            type="date"
             name='dataFinal' />
           {errors.dataFinal?.type === 'required' && "Preenchimento da Data Final é obrigatório"}
         </div>
@@ -71,7 +87,7 @@ function FormPage() {
           <input {...register("idPropriedade", { required: true })}
             type='number'
             data-cy='input-idPropriedade' />
-          {errors.idProperty?.type === 'required' && "Preenchimento do Id da Propriedade é obrigatório"}
+          {errors.idPropriedade?.type === 'required' && "Preenchimento do Id da Propriedade é obrigatório"}
         </div>
 
         <div className="nomePropriedade">
@@ -79,7 +95,7 @@ function FormPage() {
           <input {...register("nomePropriedade", { required: true })}
             type='text'
             data-cy='input-nomePropriedade' />
-          {errors.nomeProperty?.type === 'required' && "Preenchimento do Nome da Propriedade é obrigatório"}
+          {errors.nomePropriedade?.type === 'required' && "Preenchimento do Nome da Propriedade é obrigatório"}
         </div>
 
         <div className="cnpj" >
@@ -115,18 +131,20 @@ function FormPage() {
           />
         </div>
 
-        <input type="submit" 
-        data-cy="button-enviar"/>
+        <input type="submit"
+          data-cy="button-enviar" />
       </form>
+
+      <div>
+        <Backdrop
+          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={open}
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
+      </div>
     </>
   );
 }
 
 export default FormPage;
-
-
-//   ## Itens Opcionais
-//   - Usar styled-compontes.
-//   - Usar uma lib de formulario (react-hook-form por exemplo).
-//   - Mockar chamadas de dados dos inputs de select.
-//   - Caso escolha React, usar hooks
