@@ -12,13 +12,16 @@
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "uninstall": "0.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "teste": "cypress run",
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "eject": "react-scripts eject",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx"
   },
   "eslintConfig": {
     "extends": [
@@ -39,7 +42,9 @@
     ]
   },
   "devDependencies": {
+    "cypress": "^9.6.1",
     "eslint": "^8.15.0",
-    "eslint-plugin-react": "^7.30.0"
+    "eslint-plugin-react": "^7.30.0",
+    "jest": "^28.1.0"
   }
 }
