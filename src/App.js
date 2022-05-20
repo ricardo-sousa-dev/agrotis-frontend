@@ -1,14 +1,14 @@
 import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import FormPage from '../src/pages/FormPage.jsx';
+import FormPage from './pages/FormPage.jsx';
 
 function App() {
   return (
-    <BrowserRouter >
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={< FormPage />} />
+        <Route path="/" element={<FormPage />} />
       </Routes>
-    </BrowserRouter >
+    </BrowserRouter>
   );
 }
 

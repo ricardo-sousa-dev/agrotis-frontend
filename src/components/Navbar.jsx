@@ -4,7 +4,6 @@ import '../css/components/navbar.css';
 import Logo from '../images/logo-agrotis.png';
 
 function NavbarSimple() {
-
   return (
     <Navbar bg="light" expand={false} className="navbar">
       <Container fluid>

@@ -45,6 +45,7 @@ textarea {
 
 textarea {
   height: 50px;
+  padding: 6px;
 }
 
 .submit {
