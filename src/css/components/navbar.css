@@ -1,0 +1,32 @@
+.navbar {
+  display: absolute;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #00725D;
+  width: 100%;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.logo {
+  width: 150px;
+  margin: 20px 20px 10px;
+  margin-right: 50px;
+}
+
+.title-page {
+
+  font-size: 1em;
+  font-weight: bold;
+  color: #FF1616;
+}
+
+.username {
+  font-size: 2em;
+  font-weight: bold;
+  color: #FF1616;
+}
