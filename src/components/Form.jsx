@@ -58,20 +58,22 @@ function Form() {
       <Title>Cadastro</Title>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="item-form">
-          <label>Nome</label>
+          <label htmlFor="input-nome">Nome</label>
           <input
             {...register('nome', { required: true })}
             type="text"
+            id="input-nome"
             data-cy="input-nome"
           />
           {errors.nome?.type === 'required' && <span className="alert">Campo obrigatório</span>}
         </div>
 
         <div className="item-form">
-          <label>Data Inicial</label>
+          <label htmlFor="input-dataInicial">Data Inicial</label>
           <input
             {...register('dataInicial', { required: true })}
             data-cy="input-dataInicial"
+            id="input-dataInicial"
             name="dataInicial"
             value={dateMask(values.dataInicial || '')}
             onChange={inputChange}
@@ -80,10 +82,11 @@ function Form() {
         </div>
 
         <div className="item-form">
-          <label>Data Final</label>
+          <label htmlFor="input-dataFinal">Data Final</label>
           <input
             {...register('dataFinal', { required: true })}
             data-cy="input-dataFinal"
+            id="input-dataFinal"
             name="dataFinal"
             value={dateMask(values.dataFinal || '')}
             onChange={inputChange}
@@ -92,31 +95,34 @@ function Form() {
         </div>
 
         <div className="item-form">
-          <label>Id da Propriedade</label>
+          <label htmlFor="input-idPropriedade">Id da Propriedade</label>
           <input
             {...register('idPropriedade', { required: true })}
             type="number"
             data-cy="input-idPropriedade"
+            id="input-idPropriedade"
           />
           {errors.idPropriedade?.type === 'required' && <span className="alert">Campo obrigatório</span>}
         </div>
 
         <div className="item-form">
-          <label>Nome da Propriedade</label>
+          <label htmlFor="input-nomePropriedade">Nome da Propriedade</label>
           <input
             {...register('nomePropriedade', { required: true })}
             type="text"
             data-cy="input-nomePropriedade"
+            id="input-nomePropriedade"
           />
           {errors.nomePropriedade?.type === 'required' && <span className="alert">Campo obrigatório</span>}
         </div>
 
         <div className="item-form">
-          <label>CNPJ da Propriedade</label>
+          <label htmlFor="input-cnpj">CNPJ da Propriedade</label>
           <input
             {...register('cnpj', { required: true })}
             name="cnpj"
             data-cy="input-cnpj"
+            id="input-cnpj"
             value={cnpjMask(values.cnpj)}
             onChange={inputChange}
           />
@@ -124,30 +130,33 @@ function Form() {
         </div>
 
         <div className="item-form">
-          <label>Id do Laboratório</label>
+          <label htmlFor="input-idLaboratorio">Id do Laboratório</label>
           <input
             {...register('idLaboratorio', { required: true })}
             type="number"
             data-cy="input-idLaboratorio"
+            id="input-idLaboratorio"
           />
           {errors.idLaboratorio?.type === 'required' && <span className="alert">Campo obrigatório</span>}
         </div>
 
         <div className="item-form">
-          <label>Nome do Laboratório</label>
+          <label htmlFor="input-nomeLaboratorio">Nome do Laboratório</label>
           <input
             {...register('nomeLaboratorio', { required: true })}
             type="text"
             data-cy="input-nomeLaboratorio"
+            id="input-nomeLaboratorio"
           />
           {errors.nomeLaboratorio?.type === 'required' && <span className="alert">Campo obrigatório</span>}
         </div>
 
         <div className="item-form">
-          <label>Observações</label>
+          <label htmlFor="input-observacoes">Observações</label>
           <textarea
             {...register('observacoes')}
             data-cy="input-observacoes"
+            id="input-observacoes"
           />
         </div>
 

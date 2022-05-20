@@ -6,6 +6,7 @@ const dateMask = (value) => {
       .replace(/(\d{2})(\d)/, '$1/$2')
       .replace(/(\d{4})\d+?$/, '$1'); // captura os dois últimos 4 números.
   }
+  return '';
 };
 export default dateMask;
 
