@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { cnpjMask } from '../utils/inputMask';
+import cnpjMask from '../utils/cnpjMask';
+import dateMask from '../utils/dateMask';
 import styled from 'styled-components';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -69,8 +70,9 @@ function Form() {
           <label>Data Inicial</label>
           <input {...register("dataInicial", { required: true })}
             data-cy="input-dataInicial"
-            type="date"
-            name='dataInicial' />
+            name='dataInicial'
+            value={dateMask(values.dataInicial || '')}
+            onChange={inputChange} />
           {errors.dataInicial?.type === 'required' && <span className="alert">Campo obrigatório</span>}
         </div>
 
@@ -78,8 +80,9 @@ function Form() {
           <label>Data Final</label>
           <input {...register("dataFinal", { required: true })}
             data-cy="input-dataFinal"
-            type="date"
-            name='dataFinal' />
+            name='dataFinal'
+            value={dateMask(values.dataFinal || '')}
+            onChange={inputChange} />
           {errors.dataFinal?.type === 'required' && <span className="alert">Campo obrigatório</span>}
         </div>
 
