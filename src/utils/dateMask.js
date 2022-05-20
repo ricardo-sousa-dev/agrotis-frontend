@@ -1,4 +1,5 @@
 const dateMask = (value) => {
+  
   if (typeof value === "string") {
     return value
       .replace(/\D+/g, '') // não deixa ser digitado nenhuma letra
@@ -6,5 +7,6 @@ const dateMask = (value) => {
       .replace(/(\d{2})(\d)/, '$1/$2')
       .replace(/(\d{4})\d+?$/, '$1') // captura os dois últimos 4 números.
   }
+
 }
 export default dateMask;

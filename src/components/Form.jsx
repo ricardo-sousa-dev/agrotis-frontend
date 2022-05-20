@@ -44,7 +44,6 @@ function Form() {
         }
       );
     }, 3000);
-
   }
 
   const Title = styled.h1`
