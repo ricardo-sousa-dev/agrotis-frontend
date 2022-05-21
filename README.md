@@ -57,4 +57,11 @@ https://bitbucket.org/agrotis/teste-rh/src/master/teste-front-end-1/descricao-te
 
 &nbsp;&nbsp;
 
+### Executar os testes
+#### Através do terminal do seu computador:
+1. Execute o Cypress interativo e clique no arquivo de teste na tela que se abrirá.
+    * `npx cypress open`
+  
+&nbsp;&nbsp;
+
 Quer conversar a respeito do projeto? Me envie um e-mail.  :)
