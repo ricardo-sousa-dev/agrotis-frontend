@@ -35,8 +35,12 @@ cypress/videos/
 cypress/reports
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /lib
 =======
 lib/
 >>>>>>> 58ca0aa (feat: adjust gitignore and create dockerfile)
+=======
+/lib
+>>>>>>> 094d4f2 (debug: correct errors deploy heroku)
 node_modules

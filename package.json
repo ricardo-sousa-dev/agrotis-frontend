@@ -3,12 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-<<<<<<< HEAD
     "node": "14.10.0",
     "npm": "6.14.8"
-=======
-    "node": "18"
->>>>>>> 2414e7f (fix: insert version node in the package.json)
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
