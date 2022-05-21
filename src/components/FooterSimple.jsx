@@ -4,7 +4,7 @@ import '../css/components/simpleFooter.css';
 import { GrLinkedin } from 'react-icons/gr';
 import { FaGithub, FaRegEnvelope, FaWhatsapp } from 'react-icons/fa';
 
-function SimpleFooter() {
+function FooterSimple() {
   return (
     <div className="simple-footer">
       <div className="developer">
@@ -42,4 +42,4 @@ function SimpleFooter() {
   );
 }
 
-export default SimpleFooter;
+export default FooterSimple;

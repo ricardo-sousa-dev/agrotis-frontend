@@ -20,6 +20,7 @@
     ],
     "rules": {
         "no-console": "off",
+        "no-unused-vars": "off",
         "react/jsx-filename-extension": [
             1,
             {
@@ -35,5 +36,8 @@
             "pragma": "React",
             "version": "^18.1.0"
         }
+    },
+    "globals": {
+        "cy": true
     }
 }

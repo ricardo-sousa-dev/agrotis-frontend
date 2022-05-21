@@ -6,7 +6,7 @@ const cnpjMask = (value) => {
       .replace(/(\d{3})(\d)/, '$1.$2')
       .replace(/(\d{3})(\d)/, '$1/$2') // captura 2 grupos de número o primeiro e o segundo com 3 digitos, separados por /
       .replace(/(\d{4})(\d)/, '$1-$2')
-      .replace(/(-\d{2})\d+?$/, '$1'); // captura os dois últimos 2 números, com um - antes dos dois números
+      .replace(/(-\d{2})\d+$/, '$1'); // captura os dois últimos 2 números, com um - antes dos dois números
   }
   return '';
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from '../components/Form.jsx';
-import SimpleFooter from '../components/SimpleFooter.jsx';
-import Navbar from '../components/Navbar.jsx';
+import SimpleFooter from '../components/FooterSimple.jsx';
+import Navbar from '../components/NavbarSimple.jsx';
 import '../css/pages/formPage.css';
 
 function FormPage() {
