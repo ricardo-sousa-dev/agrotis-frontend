@@ -34,5 +34,9 @@ cypress/screenshots/
 cypress/videos/
 cypress/reports
 
+<<<<<<< HEAD
 /lib
+=======
+lib/
+>>>>>>> 58ca0aa (feat: adjust gitignore and create dockerfile)
 node_modules
