@@ -1,12 +1,14 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { Form } from './pages';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import FormPage from './pages/FormPage.jsx';
 
 function App() {
   return (
-    <Routes >
-      <Route path="/" element={< Form />} />
-    </Routes >
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<FormPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
