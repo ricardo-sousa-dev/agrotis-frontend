@@ -34,5 +34,5 @@ cypress/screenshots/
 cypress/videos/
 cypress/reports
 
-lib/
+/lib
 node_modules
